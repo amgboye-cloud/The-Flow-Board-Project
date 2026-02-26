@@ -117,19 +117,17 @@ async function addTask(){
 
     let newBox = document.createElement('div')
     newBox.classList.add("task","activeeee")
-    newBox.addEventListener("click", function() {
-     previewTask(this); 
-    });
+
 
 newBox.innerHTML = `
     <div class="descrip">
                 <div class="chkHed">
-                    <input type="checkbox" id="checkboxx" class="checkboxx" onclick="updatComple(this)">
+                    <input type="checkbox" id="checkboxx" class="checkboxx" onclick="updatComple(this.closest('.task'))">
                     <label for="checkboxx" class="name">${title}</label>
                 </div>
                 <div class="pri"></div>
             </div>
-            <div class="task-not">
+            <div class="task-not" onclick ="previewTask(this)">
                 <p class="todo">${description}</p>
             </div>
      <div class="details">
@@ -308,7 +306,7 @@ settingss.style.display = "none"
 anlytics.style.display = "none"
 
 
-let name = document.getElementById('active-section').textContent = "Dashboard";
+document.getElementById('active-section').textContent = "Dashboard";
 
 dash.style.display = "block"
 task.style.display = "block"
@@ -355,9 +353,7 @@ let overdueCount = 0;
    tasks.reverse().forEach(task => {
     const newBox = document.createElement("div");
     newBox.classList.add("task");
-    newBox.addEventListener("click", function() {
-     previewTask(this); 
-    });
+
     // Determine status properly
     if (task.completed) {
         newBox.classList.add("completed");
@@ -381,7 +377,7 @@ let overdueCount = 0;
             </div>
             <div class="pri"></div>
         </div>
-        <div class="task-not">
+        <div class="task-not" onclick="previewTask(this.closest('.task'))">
             <p class="todo">${task.description}</p>
         </div>
         <div class="details">
