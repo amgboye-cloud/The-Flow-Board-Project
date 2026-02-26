@@ -481,6 +481,7 @@ function previewTask(task){
 
 
  async function deleteTask(){
+        currentTask.remove()
     let fm = document.getElementById('forDelsake')
     fm.style.display = "none"
     let message = document.querySelector('.ddd')
@@ -491,7 +492,6 @@ function previewTask(task){
     message.style.display ="none"
 
 
-    currentTask.remove()
     updateCounters();
     saveTask();
     hide();
