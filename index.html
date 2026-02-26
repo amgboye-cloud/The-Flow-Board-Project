@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oi&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sono:wght,MONO@200..800,1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="icon" type="image/png" href="Images/favCon.webp">
+    <title>FlowBoard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+
+    <div class="all">
+        
+
+
+
+    <header id="navMenu">
+
+
+
+
+
+        <div class="log-div" >
+
+        <div class="ccontt" onclick="hideMenu()">
+            <div class="crossBox">
+                <div class="bar one"></div>
+                <div class="bar two"></div>
+            </div>
+        </div>
+
+
+
+
+            <p class="logo"><i class="fa-solid fa-circle-check"></i></p>
+            <h2>FlowBoard</h2>
+        </div>
+        <div class="divider"></div>
+
+        <!--Nav buttons -->
+<div class="navs" >
+        <div class="cont curr-section" onclick="active(this),homee()">
+            <img src="/Images/dashboard.png" alt="" width="30px">
+            <p>Dashboard</p>
+        </div>
+
+        <div class="cont" onclick="active(this),showCurrent('taskList','Tasks')">
+            <img src="/Images/tasks.png" alt="" width="30px">
+            <p>Tasks</p>
+        </div>
+        <div class="cont" onclick="active(this), showCurrent('teams','Team')">
+            <img src="/Images/two-users.png" alt="" width="30px">
+            <p>Team</p>
+        </div>
+
+        <div class="cont" onclick="active(this), showCurrent('analitics','Analytics')">
+            <img src="/Images/analy.png" alt="" width="30px">
+            <p>Analytics</p>
+        </div>
+
+        <div class="cont" onclick="active(this),showCurrent('settings','Settings')">
+            <img src="/Images/setting.png" alt="" width="30px">
+            <p>Settings</p>
+        </div>
+</div>
+        
+
+
+
+        <!--User profile section-->
+
+<div class="profile">
+    <div class="divider"></div> 
+
+        <div class="flexUser">
+            <div class="avatar">
+                <img src="Images/user.png" alt="">
+            </div>
+            <div class="user">
+                <p class="larger" style="font-size: 17px;">Mr Vendetta</p>
+                <p>vendetta@flowboard.com</p>
+            </div>
+        </div>
+            
+        </div>
+
+    </header>
+    <main>
+
+
+
+        <div class="top">
+                <div class="hamburger" onclick="showMenu()">
+                <div class="stroke"></div>
+                <div class="stroke"></div>
+                <div class="stroke"></div>
+            </div>
+            <div class="current">
+                <h2 id="active-section">Dashboard</h2>
+            </div>
+            <div class="actions">
+                <div class="search-cont">
+                    <button class="srch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" placeholder="Search tasks..." class="search">
+                </div>
+                <button class="NewT" onclick="Add_task()"><span class="spc">+</span> New Task</button>
+                <button class="bell"><i class="fa-regular fa-bell"></i></button>
+            </div>
+        </div>
+        <div class="divider"></div>
+<div id="dashboardDiv">
+
+        <div class="dash">
+            <div class="card">
+                <div class="inner">
+                    <div class="crd-ryt">
+                        <p class="hder">Total Tasks</p>
+                        <h1 id="total">0</h1>
+                        <p class="grn">+12% from last week</p>
+                    </div>
+                    <div class="crd-lft">
+                        <button class="sqr"><i class="fa-regular fa-square-check"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="inner">
+                    <div class="crd-ryt">
+                        <p class="hder">Active Tasks</p>
+                        <h1 id="acti">0</h1>
+                        <p class="grn">+8% from last week</p>
+                    </div>
+                    <div class="crd-lft">
+                        <button class="sqr sq2"><i class="fa-regular fa-clock"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="inner">
+                    <div class="crd-ryt">
+                        <p class="hder">Completed</p>
+                        <h1 id="complete">0</h1>
+                        <p class="grn">+23% from last week</p>
+                    </div>
+                    <div class="crd-lft">
+                        <button class="sqr sq3"><i class="fa-solid fa-arrow-trend-up"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="inner">
+                    <div class="crd-ryt">
+                        <p class="hder">Overdue</p>
+                        <h1 id="OverD">0</h1>   <!--overDue-->
+                    </div>
+                    <div class="crd-lft">
+                        <button class="sqr sq4"><i class="fa-solid fa-circle-exclamation"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+</div>        
+
+
+        </div>
+
+
+<div id="taskList">
+
+        <div class="sub-navs">
+            <h3 class="recent">Recent Tasks</h3>
+            <div class="filter">
+                <button class="filt active" onclick="showall(this)">All</button>
+                <button class="filt" onclick="filter('.activeeee',this)">Active</button>
+                <button class="filt" onclick="filter('.completed',this)">Completed</button>
+                <button class="filt"  onclick="filter('.overDue',this)">Due</button>
+                <button class="filt disable" ><span class="spcce"><i class="fa-solid fa-filter"></i></span>Filter</button>
+            </div>
+        </div>
+
+    <p class="noEle">No task available</p>
+
+<div class="allTasks" id="allTasks">
+
+
+
+
+ 
+
+    
+        
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+<!-- TEAM SECTION-->
+
+<div id="teams" class="teamss">
+    <div class="big-one">
+        <img src="Images/two-users.png" alt="" width="100px">
+            <h2 style="font-size: 20px;">Team Management</h2>
+         <p style="font-family: poppins; opacity: 0.7; font-size: 14px;">Team features coming soon</p>
+    </div>
+
+</div>
+
+
+<!--ANALYTICS-->
+
+<div id="analitics" class="teamss">
+    <div class="big-one  ">
+        <img src="Images/analy.png" alt="" width="100px">
+            <h2 style="font-size: 20px;">Analytics Dashboard</h2>
+         <p style="font-family: poppins; opacity: 0.7; font-size: 14px;">Analytics features coming soon</p>
+    </div>
+</div>
+
+
+<!--Settings-->
+
+<div id="settings" class="teamss">
+    <div class="big-one">
+        <img src="Images/setting.png" alt="" width="100px">
+            <h2 style="font-size: 20px;">Settings</h2>
+         <p style="font-family: poppins; opacity: 0.7; font-size: 14px;">Settings features coming soon</p>
+    </div>
+</div>
+
+
+
+
+        <!--Modal-->
+<div class="moda-cont" id="modal">
+            <div class="modal" id="firstModal">
+ <form action="" id="myform">
+
+                <h2 class="formH2">Create New Task</h2>
+                <p class="formP">Add a new task to your dashboard. Fill in the details below.</p>
+                <div class="form">
+                    <div class="full">
+                    <label for="title">Title</label>
+                    <input type="text" placeholder="Enter task title"  id="title">
+                    <label for="description">Description</label>
+                    <textarea name="" id="description" placeholder="Enter task description"></textarea>
+                    </div>
+                    <div class="half">
+                        <div class="boxxx">
+                        <label for="priority">Priority</label>
+                        <select name="" id="priority">
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                        </div>
+                        <div class="boxxx">
+                        <label for="date">Due Date</label>
+                        <input type="date" id="Due">
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="full">
+                    <label for="tags">Tags (comma-sperated)</label>
+                    <input type="text" id="tags" placeholder="design, meeting, education">
+
+                    </div>
+</form>  
+
+                    <div class="left-buttons">
+                        <button class="btnn-one" type="button" onclick="hide()">Cancel</button>
+                        <button class="btnn-two" type="button" onclick="addTask()">Create Task</button>
+                    </div>
+
+                </div>
+
+
+                <div class="success">
+                    <h1 class="icon"><i class="fa-solid fa-circle-check"></i></h1>
+                    <p class="succ">The task has been successfully created</p>
+                </div>
+
+
+
+            </div>
+
+
+            <!--Modal 2-->
+
+            <div class="modal taskPrebview" id="taskPreview">
+             
+             <div id="forDelsake">
+                <h1 class="taskName">Sample</h1>
+                <div class="messageAll">
+                <p class="TaskNOte">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, laboriosam cupiditate blanditiis culpa nisi tempore totam veritatis beatae fuga cum mollitia placeat maxime velit quae debitis eligendi sit, facilis numquam.</p>
+
+                </div>
+                <div class="subDec">
+                    <div class="dateee">Date</div>
+                    <div class="tage">Tag</div>
+                </div>
+                <div class="rightButons">
+                    <button class="del frst" onclick="closePrview()">Close</button>
+                    <button class="del secnd" onclick="deleteTask(this)">Delete</button>
+                </div>
+             </div>   
+
+             
+             <div class="ddd">
+                    <h1 class=" dele-icon"><i class="fa-regular fa-circle-xmark"></i></h1>
+                    <p class=" dele">The task has been successfully deleted</p>
+            </div>
+        
+
+        </div>
+
+
+
+
+    </main>
+    </div>
+
+<script src="actions.js"></script>
+
+<!--    --> 
+</body>
+</html>
