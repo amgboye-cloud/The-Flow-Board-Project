@@ -122,12 +122,12 @@ async function addTask(){
 newBox.innerHTML = `
     <div class="descrip">
                 <div class="chkHed">
-                    <input type="checkbox" id="checkboxx" class="checkboxx" onclick="updatComple(this.closest('.task'))">
+                    <input type="checkbox" id="checkboxx" class="checkboxx" onclick="updatComple(this)">
                     <label for="checkboxx" class="name">${title}</label>
                 </div>
                 <div class="pri"></div>
             </div>
-            <div class="task-not" onclick ="previewTask(this)">
+            <div class="task-not" onclick ="previewTask(this.closest('.task'))">
                 <p class="todo">${description}</p>
             </div>
      <div class="details">
@@ -234,8 +234,19 @@ let actTask = document.querySelectorAll(filter)
 
     button.classList.add('active')
 
+    showNoneMsg(actTask);
+
 }
 
+function showNoneMsg(x){
+    if(x.length === 0){
+        document.querySelector('.noEle').style.display = "block"
+    }
+    else{
+        document.querySelector('.noEle').style.display = "none"
+
+    }
+}
 
 function showall(button){
     let tasks = document.querySelectorAll('.task')
@@ -246,6 +257,11 @@ function showall(button){
 let deselect = document.querySelectorAll('.filt')
 deselect.forEach( a => a.classList.remove('active'))
 button.classList.add('active')
+
+if(tasks.length > 0){
+         document.querySelector('.noEle').style.display = "none"
+
+}
 
 }
 
@@ -285,7 +301,12 @@ hideMenu()
 
 
 
+function bodyActive(){
+if (window.matchMedia("(max-width: 1024px)").matches){
 
+hideMenu()
+}    
+}
 
 
 

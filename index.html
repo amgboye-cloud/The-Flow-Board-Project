@@ -10,7 +10,7 @@
     <title>FlowBoard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body >
 
 
 
@@ -64,7 +64,7 @@
             <p>Analytics</p>
         </div>
 
-        <div class="cont" onclick="active(this),showCurrent('settings','Settings')">
+        <div class="cont" onclick="active(this),showCurrent('settings','Settings')" >
             <img src="Images/setting.png" alt="" width="30px">
             <p>Settings</p>
         </div>
@@ -91,7 +91,7 @@
         </div>
 
     </header>
-    <main>
+    <main >
 
 
 
@@ -114,7 +114,7 @@
             </div>
         </div>
         <div class="divider"></div>
-<div id="dashboardDiv">
+<div id="dashboardDiv" onclick="bodyActive()">
 
         <div class="dash">
             <div class="card">
@@ -122,7 +122,7 @@
                     <div class="crd-ryt">
                         <p class="hder">Total Tasks</p>
                         <h1 id="total">0</h1>
-                        <p class="grn">+12% from last week</p>
+                        <p class="grn">+0% from last week</p>
                     </div>
                     <div class="crd-lft">
                         <button class="sqr"><i class="fa-regular fa-square-check"></i></button>
@@ -135,7 +135,7 @@
                     <div class="crd-ryt">
                         <p class="hder">Active Tasks</p>
                         <h1 id="acti">0</h1>
-                        <p class="grn">+8% from last week</p>
+                        <p class="grn">+0% from last week</p>
                     </div>
                     <div class="crd-lft">
                         <button class="sqr sq2"><i class="fa-regular fa-clock"></i></button>
@@ -149,7 +149,7 @@
                     <div class="crd-ryt">
                         <p class="hder">Completed</p>
                         <h1 id="complete">0</h1>
-                        <p class="grn">+23% from last week</p>
+                        <p class="grn">+0% from last week</p>
                     </div>
                     <div class="crd-lft">
                         <button class="sqr sq3"><i class="fa-solid fa-arrow-trend-up"></i></button>
@@ -177,7 +177,7 @@
         </div>
 
 
-<div id="taskList">
+<div id="taskList" onclick="bodyActive()">
 
         <div class="sub-navs">
             <h3 class="recent">Recent Tasks</h3>
@@ -215,7 +215,7 @@
 
 <!-- TEAM SECTION-->
 
-<div id="teams" class="teamss">
+<div id="teams" class="teamss" onclick="bodyActive()">
     <div class="big-one">
         <img src="Images/two-users.png" alt="" width="100px">
             <h2 style="font-size: 20px;">Team Management</h2>
@@ -227,7 +227,7 @@
 
 <!--ANALYTICS-->
 
-<div id="analitics" class="teamss">
+<div id="analitics" class="teamss" onclick="bodyActive()">
     <div class="big-one  ">
         <img src="Images/analy.png" alt="" width="100px">
             <h2 style="font-size: 20px;">Analytics Dashboard</h2>
@@ -238,7 +238,7 @@
 
 <!--Settings-->
 
-<div id="settings" class="teamss">
+<div id="settings" class="teamss" onclick="bodyActive()">
     <div class="big-one">
         <img src="Images/setting.png" alt="" width="100px">
             <h2 style="font-size: 20px;">Settings</h2>
